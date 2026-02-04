@@ -67,11 +67,14 @@ function createResultCard(item) {
       ${item.sala}
     </div>` : '';
 
+  const isNotario = item.nombre.toLowerCase().includes('omar lozano');
+  const nameClass = isNotario ? 'result-name notario-name' : 'result-name';
+
   return `
     <div class="result-card" data-floor="${item.piso}" style="animation-delay: ${Math.random() * 0.1}s">
       <div class="result-header">
         <div>
-          <h3 class="result-name">${item.nombre}</h3>
+          <h3 class="${nameClass}">${item.nombre}</h3>
         </div>
         <div class="result-floor-badge" data-floor="${item.piso}">
           ${floorBadgeText}
@@ -179,11 +182,60 @@ floorItems.forEach(item => {
   });
 });
 
+// Modal QR
+const qrBtn = document.getElementById('qrBtn');
+const qrModal = document.getElementById('qrModal');
+const closeQrModal = document.getElementById('closeQrModal');
+
+// Abrir modal
+if (qrBtn) {
+  qrBtn.addEventListener('click', () => {
+    qrModal.style.display = 'flex';
+  });
+}
+
+// Cerrar modal
+if (closeQrModal) {
+  closeQrModal.addEventListener('click', () => {
+    qrModal.style.display = 'none';
+  });
+}
+
+// Cerrar al hacer clic fuera
+window.addEventListener('click', (e) => {
+  if (e.target === qrModal) {
+    qrModal.style.display = 'none';
+  }
+});
+
+// Cerrar con Escape
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && qrModal.style.display === 'flex') {
+    qrModal.style.display = 'none';
+  }
+});
+
 // Chips de Filtros Rápidos
 chips.forEach(chip => {
   chip.addEventListener('click', () => {
+    // Si es el chip VIP (Notario)
+    if (chip.dataset.search === 'omar lozano') {
+      // Toggle
+      if (chip.classList.contains('active')) {
+        chip.classList.remove('active');
+        clearSearch();
+      } else {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        searchInput.value = 'Omar Lozano';
+        searchTerm = 'omar lozano';
+        currentFilter = 'todos';
+        clearBtn.style.display = 'flex';
+        handleSearch();
+      }
+    }
     // Si es el chip VIP (Secretaria del Notario)
-    if (chip.dataset.search === 'lourdes') {
+    else if (chip.dataset.search === 'lourdes') {
       // Toggle: si ya está activo, limpiamos
       if (chip.classList.contains('active')) {
         chip.classList.remove('active');

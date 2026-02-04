@@ -45,12 +45,32 @@
                     <p class="logo-subtitle">Directorio Telefónico</p>
                 </div>
             </div>
-            <a href="#inicio" class="header-link">
-                <span class="material-icons">home</span>
-                Inicio
-            </a>
+            <div class="header-actions">
+                <a href="#inicio" class="header-link">
+                    <span class="material-icons">home</span>
+                    <span>Inicio</span>
+                </a>
+                <button id="qrBtn" class="qr-btn" aria-label="Ver código QR para móvil">
+                    <span class="material-icons">qr_code_2</span>
+                    <span class="qr-btn-text">Ver en móvil</span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- Modal QR -->
+    <div id="qrModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="closeQrModal" class="modal-close" aria-label="Cerrar">
+                <span class="material-icons">close</span>
+            </button>
+            <h3 class="modal-title">Escanea para llevar en tu celular</h3>
+            <div class="qr-container">
+                <img src="Qr.png" alt="Código QR del sitio" class="qr-image">
+            </div>
+            <p class="modal-text">Apunta la cámara de tu teléfono al código para abrir el directorio móvil</p>
+        </div>
+    </div>
 
     <!-- Sección Principal -->
     <main class="main">
@@ -61,6 +81,12 @@
 
                 <!-- Filtros Rápidos (arriba inicialmente) -->
                 <div id="quickFilters" class="quick-filters">
+                    <!-- Acceso VIP: Notario -->
+                    <button class="chip chip-vip" data-search="omar lozano">
+                        <span class="material-icons">gavel</span>
+                        Notario
+                    </button>
+
                     <!-- Acceso VIP: Secretaria del Notario -->
                     <button class="chip chip-vip" data-search="lourdes">
                         <span class="material-icons">star</span>
