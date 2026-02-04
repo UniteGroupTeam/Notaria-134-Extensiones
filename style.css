@@ -1,0 +1,878 @@
+/* ========================================
+   VARIABLES - GOOGLE MATERIAL DESIGN
+   ======================================== */
+:root {
+    /* Colores Google */
+    --google-blue: #1A73E8;
+    --google-red: #EA4335;
+    --google-yellow: #FBBC04;
+    --google-green: #34A853;
+
+    /* Colores base */
+    --surface: #FFFFFF;
+    --background: #F8F9FA;
+    --on-surface: #202124;
+    --on-surface-variant: #5F6368;
+    --outline: #DADCE0;
+    --outline-variant: #E8EAED;
+
+    /* Colores por piso */
+    --floor-pb: #9334E9;
+    --floor-1: #16A34A;
+    --floor-2: #2563EB;
+    --floor-3: #EA580C;
+    --floor-4: #DB2777;
+
+    /* Espaciado Google */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-12: 48px;
+
+    /* Bordes */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 24px;
+
+    /* Elevaciones Material */
+    --elevation-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    --elevation-2: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    --elevation-3: 0 4px 8px 3px rgba(60, 64, 67, 0.15), 0 1px 3px rgba(60, 64, 67, 0.3);
+
+    /* Transiciones */
+    --transition: 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* ========================================
+   RESET Y BASE
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--on-surface);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+/* ========================================
+   HEADER - Estilo Google
+   ======================================== */
+.header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--outline-variant);
+    padding: var(--space-4) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--elevation-1);
+}
+
+.header-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--google-blue);
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--on-surface);
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+}
+
+.logo-subtitle {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--on-surface-variant);
+    line-height: 1;
+}
+
+.header-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+}
+
+.header-link:hover {
+    background: var(--outline-variant);
+    color: var(--google-blue);
+}
+
+.header-link .material-icons {
+    font-size: 20px;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+.main {
+    padding: var(--space-8) 0;
+}
+
+/* ========================================
+   SECCIÓN DE BÚSQUEDA
+   ======================================== */
+.search-section {
+    margin-bottom: var(--space-8);
+}
+
+.search-title {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--on-surface);
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.5px;
+}
+
+/* Filtros Rápidos (Chips) */
+.quick-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    transition: var(--transition);
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    height: 32px;
+    padding: 0 var(--space-3);
+    background: var(--surface);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--on-surface);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.chip:hover {
+    background: var(--outline-variant);
+    box-shadow: var(--elevation-1);
+}
+
+.chip:active {
+    transform: scale(0.98);
+}
+
+.chip.active {
+    background: var(--google-blue);
+    color: var(--surface);
+    border-color: var(--google-blue);
+    font-weight: 600;
+}
+
+.chip.active .material-icons,
+.chip.active .chip-label {
+    color: var(--surface);
+}
+
+.chip-sistemas.active {
+    background: var(--google-blue);
+}
+
+.chip-vip.active {
+    background: var(--google-red);
+    border-color: var(--google-red);
+}
+
+.chip-pb.active,
+.chip-1.active,
+.chip-2.active,
+.chip-3.active,
+.chip-4.active {
+    color: var(--surface);
+}
+
+.chip-pb.active {
+    background: var(--floor-pb);
+    border-color: var(--floor-pb);
+}
+
+.chip-1.active {
+    background: var(--floor-1);
+    border-color: var(--floor-1);
+}
+
+.chip-2.active {
+    background: var(--floor-2);
+    border-color: var(--floor-2);
+}
+
+.chip-3.active {
+    background: var(--floor-3);
+    border-color: var(--floor-3);
+}
+
+.chip-4.active {
+    background: var(--floor-4);
+    border-color: var(--floor-4);
+}
+
+.chip .material-icons {
+    font-size: 18px;
+}
+
+.chip-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--surface);
+}
+
+.chip-sistemas {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+}
+
+.chip-sistemas:hover {
+    background: rgba(26, 115, 232, 0.08);
+}
+
+.chip-vip {
+    border-color: var(--google-red);
+    color: var(--google-red);
+    font-weight: 600;
+}
+
+.chip-vip:hover {
+    background: rgba(234, 67, 53, 0.08);
+}
+
+.chip-vip .material-icons {
+    color: var(--google-red);
+}
+
+.chip-pb .chip-label {
+    background: var(--floor-pb);
+}
+
+.chip-1 .chip-label {
+    background: var(--floor-1);
+}
+
+.chip-2 .chip-label {
+    background: var(--floor-2);
+}
+
+.chip-3 .chip-label {
+    background: var(--floor-3);
+}
+
+.chip-4 .chip-label {
+    background: var(--floor-4);
+}
+
+/* Barra de Búsqueda */
+.search-container {
+    max-width: 720px;
+}
+
+.search-box {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--outline);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-4);
+    transition: var(--transition);
+}
+
+.search-box:hover {
+    box-shadow: var(--elevation-1);
+}
+
+.search-box:focus-within {
+    box-shadow: var(--elevation-2);
+    border-color: var(--google-blue);
+}
+
+.search-icon {
+    color: var(--on-surface-variant);
+    font-size: 24px;
+    margin-right: var(--space-2);
+}
+
+.search-input {
+    flex: 1;
+    height: 48px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--on-surface);
+}
+
+.search-input::placeholder {
+    color: var(--on-surface-variant);
+}
+
+.clear-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--on-surface-variant);
+    transition: var(--transition);
+}
+
+.clear-btn:hover {
+    background: var(--outline-variant);
+}
+
+.clear-btn .material-icons {
+    font-size: 20px;
+}
+
+/* ========================================
+   RESULTADOS
+   ======================================== */
+.results-section {
+    margin-bottom: var(--space-8);
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.results-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--on-surface);
+}
+
+.results-badge {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 var(--space-2);
+    background: var(--outline-variant);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--on-surface-variant);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-4);
+}
+
+/* Tarjeta de Resultado */
+.result-card {
+    background: var(--surface);
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.result-card[data-floor="Planta Baja"]::before {
+    background: var(--floor-pb);
+}
+
+.result-card[data-floor="Piso 1"]::before {
+    background: var(--floor-1);
+}
+
+.result-card[data-floor="Piso 2"]::before {
+    background: var(--floor-2);
+}
+
+.result-card[data-floor="Piso 3"]::before {
+    background: var(--floor-3);
+}
+
+.result-card[data-floor="Piso 4"]::before {
+    background: var(--floor-4);
+}
+
+.result-card:hover {
+    box-shadow: var(--elevation-2);
+    border-color: var(--outline);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-3);
+    gap: var(--space-3);
+}
+
+.result-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--on-surface);
+    line-height: 1.4;
+}
+
+.result-floor-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 var(--space-2);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--surface);
+    flex-shrink: 0;
+}
+
+.result-floor-badge[data-floor="Planta Baja"] {
+    background: var(--floor-pb);
+}
+
+.result-floor-badge[data-floor="Piso 1"] {
+    background: var(--floor-1);
+}
+
+.result-floor-badge[data-floor="Piso 2"] {
+    background: var(--floor-2);
+}
+
+.result-floor-badge[data-floor="Piso 3"] {
+    background: var(--floor-3);
+}
+
+.result-floor-badge[data-floor="Piso 4"] {
+    background: var(--floor-4);
+}
+
+.result-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.result-extension {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 36px;
+    /* Aumentado de 28px */
+    font-weight: 700;
+    /* Más negrita */
+    font-family: 'Roboto', sans-serif;
+    /* Usar Roboto para números más limpios */
+    color: var(--google-blue);
+    /* Color destacado */
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.extension-icon {
+    font-size: 18px;
+    /* Más pequeño */
+    color: var(--outline);
+    /* Mucho más sutil */
+    margin-top: 4px;
+}
+
+.result-floor {
+    color: var(--on-surface-variant);
+    font-size: 14px;
+}
+
+.result-sala {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    background: var(--outline-variant);
+    border-radius: var(--radius-sm);
+    color: var(--on-surface-variant);
+    font-size: 12px;
+    width: fit-content;
+}
+
+/* ========================================
+   ESTADOS VACÍOS
+   ======================================== */
+.empty-state {
+    text-align: center;
+    padding: var(--space-12) var(--space-4);
+}
+
+.empty-icon {
+    font-size: 64px;
+    color: var(--outline);
+    margin-bottom: var(--space-4);
+}
+
+.empty-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--on-surface);
+    margin-bottom: var(--space-2);
+}
+
+.empty-text {
+    font-size: 14px;
+    color: var(--on-surface-variant);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   GUÍA DE PISOS
+   ======================================== */
+.floors-section {
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--outline-variant);
+}
+
+.section-heading {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--on-surface);
+    margin-bottom: var(--space-6);
+}
+
+.floors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+}
+
+.floor-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--surface);
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+    cursor: pointer;
+    user-select: none;
+}
+
+.floor-item:hover {
+    box-shadow: var(--elevation-2);
+    transform: translateY(-2px);
+    border-color: var(--outline);
+}
+
+.floor-item:active {
+    transform: translateY(0);
+}
+
+.floor-badge {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--surface);
+    flex-shrink: 0;
+}
+
+.floor-pb .floor-badge {
+    background: var(--floor-pb);
+}
+
+.floor-1 .floor-badge {
+    background: var(--floor-1);
+}
+
+.floor-2 .floor-badge {
+    background: var(--floor-2);
+}
+
+.floor-3 .floor-badge {
+    background: var(--floor-3);
+}
+
+.floor-4 .floor-badge {
+    background: var(--floor-4);
+}
+
+.floor-content {
+    flex: 1;
+}
+
+.floor-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--on-surface);
+    margin-bottom: var(--space-1);
+}
+
+.floor-desc {
+    font-size: 13px;
+    color: var(--on-surface-variant);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: var(--surface);
+    border-top: 1px solid var(--outline-variant);
+    padding: var(--space-6) 0;
+    margin-top: var(--space-12);
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 13px;
+    color: var(--on-surface-variant);
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL PRIMERO
+   ======================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+
+    .header {
+        padding: var(--space-3) 0;
+    }
+
+    .header-container {
+        padding: 0 var(--space-3);
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-title {
+        font-size: 16px;
+    }
+
+    .logo-subtitle {
+        font-size: 11px;
+    }
+
+    .header-link {
+        padding: var(--space-2);
+        font-size: 0;
+    }
+
+    .header-link .material-icons {
+        margin: 0;
+    }
+
+    .main {
+        padding: var(--space-6) 0;
+    }
+
+    .search-title {
+        font-size: 24px;
+        margin-bottom: var(--space-4);
+    }
+
+    .quick-filters {
+        margin-bottom: var(--space-4);
+    }
+
+    .chip {
+        font-size: 13px;
+        height: 28px;
+    }
+
+    .search-box {
+        padding: 0 var(--space-3);
+    }
+
+    .search-input {
+        height: 44px;
+        font-size: 16px;
+        /* Evita zoom en iOS */
+    }
+
+    .results-section {
+        margin-bottom: var(--space-6);
+    }
+
+    .results-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columnas forzadas en móvil */
+        gap: var(--space-2);
+    }
+
+    .results-title {
+        font-size: 20px;
+    }
+
+    /* Ajustes para tarjetas compactas en móvil */
+    .result-card {
+        padding: var(--space-2);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100px;
+    }
+
+    .result-name {
+        font-size: 13px;
+        /* Nombre más pequeño en móvil */
+        line-height: 1.2;
+        margin-bottom: var(--space-1);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Ocultar badge de piso en tarjetas muy pequeñas si es necesario, 
+     o hacerlo muy pequeño */
+    .result-floor-badge {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 10px;
+        padding: 0 4px;
+    }
+
+    .result-header {
+        margin-bottom: var(--space-1);
+    }
+
+    .result-extension {
+        font-size: 22px;
+        /* Número prominente */
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    .extension-icon {
+        display: none;
+        /* Ocultar icono en móvil para ahorrar espacio */
+    }
+
+    .result-floor,
+    .result-sala {
+        display: none;
+        /* Ocultar detalles secundarios en vista compacta móvil */
+    }
+
+    .floors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floor-item {
+        padding: var(--space-3);
+    }
+
+    .floor-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .section-heading {
+        font-size: 18px;
+        margin-bottom: var(--space-4);
+    }
+
+    .floors-section {
+        padding: var(--space-6) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-title {
+        font-size: 20px;
+    }
+
+    .result-extension {
+        font-size: 20px;
+    }
+
+    .empty-icon {
+        font-size: 48px;
+    }
+
+    .empty-title {
+        font-size: 18px;
+    }
+}
